@@ -2,7 +2,7 @@ package com.dicoding.assosiate.recyclerviewapp;
 
 import java.util.ArrayList;
 
-public class President {
+public class PresidentData {
     private String name, remarks, photo;
 
 
@@ -40,11 +40,11 @@ public class President {
             {"Joko Widodo", "Presiden Ketujuh RI", "https://upload.wikimedia.org/wikipedia/commons/1/1c/Joko_Widodo_2014_official_portrait.jpg"}
     };
 
-    public static ArrayList<President> getListData(){
-        President president = null;
-        ArrayList<President> list = new ArrayList<>();
+    public static ArrayList<PresidentData> getListData(){
+        PresidentData president = null;
+        ArrayList<PresidentData> list = new ArrayList<>();
         for (String[] aData : data){
-            president = new President();
+            president = new PresidentData();
             president.setName(aData[0]);
             president.setRemarks(aData[1]);
             president.setPhoto(aData[2]);

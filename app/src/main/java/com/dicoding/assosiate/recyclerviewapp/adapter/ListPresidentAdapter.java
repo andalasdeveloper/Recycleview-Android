@@ -3,7 +3,6 @@ package com.dicoding.assosiate.recyclerviewapp.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.dicoding.assosiate.recyclerviewapp.President;
+import com.dicoding.assosiate.recyclerviewapp.PresidentData;
 import com.dicoding.assosiate.recyclerviewapp.R;
 
 import java.util.ArrayList;
@@ -20,18 +19,18 @@ import java.util.ArrayList;
 public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdapter.CategoryViewHolder> {
 
     private Context context;
-    private ArrayList<President> listPresident;
+    private ArrayList<PresidentData> listPresident;
     public ListPresidentAdapter(Context context) {
         this.context = context;
     }
 
 
 
-    public ArrayList<President> getListPresident() {
+    public ArrayList<PresidentData> getListPresident() {
         return listPresident;
     }
 
-    public void setListPresident(ArrayList<President> listPresident) {
+    public void setListPresident(ArrayList<PresidentData> listPresident) {
         this.listPresident = listPresident;
     }
 
