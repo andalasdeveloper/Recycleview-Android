@@ -2,17 +2,20 @@ package com.dicoding.assosiate.recyclerviewapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.dicoding.assosiate.recyclerviewapp.adapter.GridPresidentAdapter;
 import com.dicoding.assosiate.recyclerviewapp.adapter.ListPresidentAdapter;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView rvCatergory;
+    private RecyclerView rvCategory;
+
     private ArrayList<PresidentData> list = new ArrayList<>();
 
     @Override
@@ -20,18 +23,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvCatergory = findViewById(R.id.rv_category);
-        rvCatergory.setHasFixedSize(true);
+        rvCategory = findViewById(R.id.rv_category);
+        rvCategory.setHasFixedSize(true);
 
         list.addAll(PresidentData.getListData());
         showRecycleList();
     }
 
     private void showRecycleList() {
-        rvCatergory.setLayoutManager(new LinearLayoutManager(this));
+        rvCategory.setLayoutManager(new LinearLayoutManager(this));
         ListPresidentAdapter listPresidentAdapter = new ListPresidentAdapter(this);
         listPresidentAdapter.setListPresident(list);
-        rvCatergory.setAdapter(listPresidentAdapter);
+        rvCategory.setAdapter(listPresidentAdapter);
     }
 
     @Override
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.action_list:
+                showRecycleList();
                 break;
             case R.id.action_grid :
                 break;
@@ -50,5 +54,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showRecyclerGrid(){
+        rvCategory.setLayoutManager(new GridLayoutManager(this, 2));
+        GridPresidentAdapter gridPresidentAdapter = new GridPresidentAdapter(this);
+        gridPresidentAdapter.setListPresident(list);
+        rvCategory.setAdapter(gridPresidentAdapter);
     }
 }
