@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.dicoding.assosiate.recyclerviewapp.model.President;
-import com.dicoding.assosiate.recyclerviewapp.model.PresidentData;
 import com.dicoding.assosiate.recyclerviewapp.R;
 
 import java.util.ArrayList;
@@ -21,28 +20,20 @@ public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdap
 
     private Context context;
     private ArrayList<President> listPresident;
+    private ArrayList<President> getListPresident() {
+        return listPresident;
+    }
+    public void setListPresident(ArrayList<President> listPresident) {
+        this.listPresident = listPresident;
+    }
     public ListPresidentAdapter(Context context) {
         this.context = context;
     }
 
-
-
-
-    public ArrayList<President> getListPresident() {
-        return listPresident;
-    }
-
-    public void setListPresident(ArrayList<President> listPresident) {
-        this.listPresident = listPresident;
-    }
-
-
-
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_row_president,viewGroup, false);
-
+        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_row_president, viewGroup, false);
         return new CategoryViewHolder(itemRow);
     }
 
@@ -50,10 +41,9 @@ public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdap
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int position) {
         categoryViewHolder.tvName.setText(getListPresident().get(position).getName());
         categoryViewHolder.tvRemarks.setText(getListPresident().get(position).getRemarks());
-
         Glide.with(context)
                 .load(getListPresident().get(position).getPhoto())
-                .apply(new RequestOptions().override(55,55))
+                .apply(new RequestOptions().override(55, 55))
                 .into(categoryViewHolder.imgPhoto);
     }
 
@@ -62,12 +52,11 @@ public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdap
         return getListPresident().size();
     }
 
-    public class CategoryViewHolder extends RecyclerView.ViewHolder {
+    class CategoryViewHolder extends RecyclerView.ViewHolder {
         TextView tvName;
         TextView tvRemarks;
         ImageView imgPhoto;
-
-        public CategoryViewHolder(@NonNull View itemView) {
+        CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_item_name);
             tvRemarks = itemView.findViewById(R.id.tv_item_remarks);

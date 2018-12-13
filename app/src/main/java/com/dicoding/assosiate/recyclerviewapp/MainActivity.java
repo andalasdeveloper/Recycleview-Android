@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.dicoding.assosiate.recyclerviewapp.adapter.GridPresidentAdapter;
 import com.dicoding.assosiate.recyclerviewapp.adapter.ListPresidentAdapter;
+import com.dicoding.assosiate.recyclerviewapp.model.President;
 import com.dicoding.assosiate.recyclerviewapp.model.PresidentData;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvCategory;
 
-    private ArrayList<PresidentData> list = new ArrayList<>();
+    private ArrayList<President> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

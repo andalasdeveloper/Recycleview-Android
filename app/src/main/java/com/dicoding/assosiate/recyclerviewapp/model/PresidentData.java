@@ -18,14 +18,16 @@ public class PresidentData {
     public static ArrayList<President> getListData(){
         President president = null;
         ArrayList<President> list = new ArrayList<>();
-        for (String[] aData : data){
+        for (String[] aData : data) {
             president = new President();
             president.setName(aData[0]);
             president.setRemarks(aData[1]);
             president.setPhoto(aData[2]);
+
+            list.add(president);
         }
+
         return list;
     }
-
 }
 

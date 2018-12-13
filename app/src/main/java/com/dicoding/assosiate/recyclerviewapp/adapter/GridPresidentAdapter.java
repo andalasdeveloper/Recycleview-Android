@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.dicoding.assosiate.recyclerviewapp.model.PresidentData;
+import com.dicoding.assosiate.recyclerviewapp.model.President;
 import com.dicoding.assosiate.recyclerviewapp.R;
 
 import java.util.ArrayList;
@@ -23,15 +23,15 @@ public class GridPresidentAdapter extends RecyclerView.Adapter<GridPresidentAdap
         this.context = context;
     }
 
-    public ArrayList<PresidentData> getListPresident() {
+    public ArrayList<President> getListPresident() {
         return listPresident;
     }
 
-    public void setListPresident(ArrayList<PresidentData> listPresident) {
+    public void setListPresident(ArrayList<President> listPresident) {
         this.listPresident = listPresident;
     }
 
-    private ArrayList<PresidentData> listPresident;
+    private ArrayList<President> listPresident;
     @NonNull
     @Override
     public GridViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
