@@ -1,34 +1,9 @@
-package com.dicoding.assosiate.recyclerviewapp;
+package com.dicoding.assosiate.recyclerviewapp.model;
 
 import java.util.ArrayList;
 
 public class PresidentData {
-    private String name, remarks, photo;
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getRemarks() {
-        return remarks;
-    }
-
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
 
     public static String[][] data = new String[][]{
             {"Soekarno", "Presiden Pertama RI", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Presiden_Sukarno.jpg/418px-Presiden_Sukarno.jpg"},
@@ -40,11 +15,11 @@ public class PresidentData {
             {"Joko Widodo", "Presiden Ketujuh RI", "https://upload.wikimedia.org/wikipedia/commons/1/1c/Joko_Widodo_2014_official_portrait.jpg"}
     };
 
-    public static ArrayList<PresidentData> getListData(){
-        PresidentData president = null;
-        ArrayList<PresidentData> list = new ArrayList<>();
+    public static ArrayList<President> getListData(){
+        President president = null;
+        ArrayList<President> list = new ArrayList<>();
         for (String[] aData : data){
-            president = new PresidentData();
+            president = new President();
             president.setName(aData[0]);
             president.setRemarks(aData[1]);
             president.setPhoto(aData[2]);

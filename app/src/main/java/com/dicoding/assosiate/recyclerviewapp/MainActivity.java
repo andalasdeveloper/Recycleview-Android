@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.dicoding.assosiate.recyclerviewapp.adapter.GridPresidentAdapter;
 import com.dicoding.assosiate.recyclerviewapp.adapter.ListPresidentAdapter;
+import com.dicoding.assosiate.recyclerviewapp.model.PresidentData;
 
 import java.util.ArrayList;
 
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 showRecycleList();
                 break;
             case R.id.action_grid :
+                showRecyclerGrid();
                 break;
             case R.id.action_cardview:
                 break;

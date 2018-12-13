@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.dicoding.assosiate.recyclerviewapp.PresidentData;
+import com.dicoding.assosiate.recyclerviewapp.model.PresidentData;
 import com.dicoding.assosiate.recyclerviewapp.R;
 
 import java.util.ArrayList;
